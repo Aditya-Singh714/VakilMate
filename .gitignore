@@ -1,0 +1,20 @@
+# Node.js
+node_modules/
+.env
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Uploads (you can track this separately if needed)
+server/uploads/
+
+# React Vite build
+client/dist/
