@@ -37,7 +37,7 @@ export const FileUpload = ({ onSummary }) => {
       const uploadToast = toast.loading("Uploading file...");
 
       const uploadRes = await axios.post(
-        "http://localhost:5000/api/upload",
+        `${import.meta.env.VITE_BACKEND_URL}/api/upload`,
         formData,
         {
           onUploadProgress: (progressEvent) => {
@@ -54,7 +54,7 @@ export const FileUpload = ({ onSummary }) => {
       toast.loading("Getting summary...");
 
       const summaryRes = await axios.post(
-        "http://localhost:5000/api/summarize",
+        `${import.meta.env.VITE_BACKEND_URL}/api/summarize`,
         {
           text: uploadRes.data.text,
         }
