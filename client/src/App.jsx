@@ -1,7 +1,13 @@
 import Home from "./pages/Home";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
-  return <Home />;
+  return (
+    <>
+      <Toaster position="top-right" reverseOrder={false} />
+      <Home />;
+    </>
+  );
 };
 
 export default App;

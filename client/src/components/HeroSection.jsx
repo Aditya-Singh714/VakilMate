@@ -65,21 +65,13 @@ export const HeroSection = () => {
         transition={{ duration: 0.6 }}
         className="relative z-20 text-center max-w-2xl px-4"
       >
-        <FaBalanceScale className="text-5xl text-blue-600 mb-4 mx-auto" />
+        <FaBalanceScale className="text-5xl text-black mb-4 mx-auto" />
         <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4">
           VakilMate
         </h1>
         <p className="text-lg text-white mb-6 backdrop-blur-sm bg-white/20 px-4 py-2 rounded-xl inline-block">
           Your AI-powered legal assistant for simplified Indian law documents.
         </p>
-        <Motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="#how-it-works"
-          className="bg-blue-600 text-white px-6 py-3 rounded-xl text-lg shadow-md hover:bg-blue-700 transition"
-        >
-          Upload Document
-        </Motion.a>
       </Motion.div>
     </section>
   );
