@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   if (!text) {
     return res.status(400).json({ error: "Text is required" });
   }
-
+  console.log(text);
   try {
     const summary = await getLegalSummary(text);
     res.json({ summary });

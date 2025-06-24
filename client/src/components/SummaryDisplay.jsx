@@ -9,6 +9,22 @@ import {
 } from "react-icons/fa";
 import toast from "react-hot-toast";
 
+// Highlight Section, Article, and Case Names
+const formatSummary = (text) => {
+  if (!text) return "";
+
+  return text
+    .replace(
+      /(Section\s\d+[A-Za-z]*)/g,
+      '<strong class="text-blue-600">$1</strong>'
+    )
+    .replace(/(Article\s\d+)/g, '<strong class="text-purple-600">$1</strong>')
+    .replace(
+      /([A-Z][a-z]+ v\. [A-Z][a-z]+)/g,
+      '<strong class="text-green-700">$1</strong>'
+    );
+};
+
 export const SummaryDisplay = ({ summary, onClear }) => {
   const [copied, setCopied] = useState(false);
 
@@ -66,9 +82,11 @@ export const SummaryDisplay = ({ summary, onClear }) => {
         </span>
       </div>
 
-      <div className="overflow-y-auto max-h-[400px] whitespace-pre-wrap text-gray-700 border p-4 rounded-md text-sm bg-gray-50">
-        {summary || "No summary available."}
-      </div>
+      {/* Summary Content with Highlighting */}
+      <div
+        className="overflow-y-auto max-h-[400px] whitespace-pre-wrap text-gray-700 border p-4 rounded-md text-sm bg-gray-50"
+        dangerouslySetInnerHTML={{ __html: formatSummary(summary) }}
+      ></div>
 
       {summary && (
         <div className="flex flex-wrap gap-4 mt-4">
